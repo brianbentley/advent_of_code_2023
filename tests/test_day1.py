@@ -1,12 +1,9 @@
-from day1 import solve
+from day1 import solve_a, PUZZLE
 
-SAMPLE_INPUT = """
-1abc2
-pqr3stu8vwx
-a1b2c3d4e5f
-treb7uchet
-"""
-SAMPLE_OUTPUT = 142
 
-def test_sample_input():
-    assert solve(SAMPLE_INPUT) == SAMPLE_OUTPUT
+
+
+def test_example_a():
+    input_data = PUZZLE.examples[0].input_data
+    answer_a = PUZZLE.examples[0].answer_a
+    assert solve_a(input_data) == answer_a

@@ -1,4 +1,9 @@
-def solve(puzzle_input):
+
+from aocd.models import Puzzle
+
+PUZZLE = Puzzle(year=2023, day=1)
+
+def solve_a(puzzle_input):
     calibration_values = []
     for line in puzzle_input.strip().split("\n"):
         first = None
@@ -9,10 +14,8 @@ def solve(puzzle_input):
                 if first is None:
                     first = int(char)
         calibration_values.append(first  * 10 + last)
-    return sum(calibration_values)
+    return str(sum(calibration_values))
 
-if __name__ == '__main__':
-    with open("day1/input.txt") as input_file:
-        puzzle_input = input_file.read()
-    puzzle_output = solve(puzzle_input)
-    print(puzzle_output)
+if __name__ == "__main__":
+    puzzle_input = solve_a(PUZZLE.input_data)
+    print(f"answer_a = {puzzle_input}")
